@@ -58,7 +58,6 @@ public class UserManager implements IUserManager {
         Connection conn = null;
         try {
             conn = DBUtil.getConnection();
-            conn.setAutoCommit(false);
             String sql = "select user_pwd,register_time from tbl_user where user_id=?";
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, userid);
